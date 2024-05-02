@@ -15,7 +15,7 @@ struct RootContentView: View {
             if viewModel.isLoading {
                 PreloaderView()
             } else {
-                Text("Hello, World!")
+                TabBar()
             }
         }
         .onAppear {
