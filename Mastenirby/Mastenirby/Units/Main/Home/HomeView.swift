@@ -8,10 +8,38 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
-        ZStack {
-            Colors.background.swiftUIColor
-                .ignoresSafeArea()
+        NavigationStack {
+            ZStack {
+                Colors.background.swiftUIColor
+                    .ignoresSafeArea()
+                
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 10) {
+                        // Top image
+                        TopWallPaperView(title: "Dom")
+                        
+                        // Events
+                        
+                        // Motivation
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 10),
+                                            GridItem(.flexible(), spacing: 0)],
+                                  spacing: 10) {
+                            ForEach(viewModel.motivationItems) { item in
+                                NavigationLink(value: item) {
+                                    MotivationCell(item: item)
+                                }
+                            }
+                        }
+                                  .padding(.horizontal, 10)
+                    }
+                }
+            }
+            .navigationDestination(for: HomeView.MotivationItem.self) { item in
+                MotivationDetailsView(item: item)
+            }
         }
     }
 }
