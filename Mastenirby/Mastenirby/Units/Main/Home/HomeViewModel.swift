@@ -10,6 +10,8 @@ import Foundation
 extension HomeView {
     final class HomeViewModel: ObservableObject {
         
+        @Published var eventItems: [EventItem] = []
+        
         let motivationItems: [MotivationItem] = [
             .init(image: Asset.motivation4.name,
                   text: "O krok od ekranu  \nAplikacja detoksu cyfrowego jest niezastąpionym towarzyszem w podróży ku nowym przeżyciom. Kiedy zbliżasz się do ekranu, zatrzymaj się na chwilę i skorzystaj z aplikacji, aby odkryć sposoby na delektowanie się chwilą bez nieustannego pochłaniania uwagi przez urządzenia elektroniczne. Dzięki niej możesz zachować swoje zasoby na tę niesamowitą przygodę i skoncentrować się na otaczającej rzeczywistości.\nOtwórz swoje umysłowe horyzonty, wykorzystując aplikację detoksu cyfrowego. To nie tylko narzędzie, ale także inspiracja do odkrywania nowych pomysłów i możliwości, pozostawiając w tyle szum cyfrowego świata. Stwórz własną wersję bezekranowej przygody, zainspirowaną przez aplikację, która pomoże Ci cieszyć się chwilą bez technologicznego rozpraszacza.\nZachęcamy do eksperymentowania z różnymi sposobami korzystania z aplikacji detoksu cyfrowego, aby lepiej zrozumieć, jakie doświadczenia sprawiają Ci największą radość i satysfakcję. Pamiętaj, że podróż bez ekranu może być nie tylko relaksem, ale też szansą na autentyczne odkrywanie siebie i otaczającego świata. Niech aplikacja stanie się Twoim przewodnikiem w tej inspirującej podróży, pozwalającą Ci korzystać z chwil bez ekranu w pełni i z pasją!\nOtwórz nowe horyzonty"),
@@ -21,10 +23,31 @@ extension HomeView {
                   text: "Poszukiwanie nowych doświadczeń staje się jeszcze bardziej ekscytujące dzięki naszej aplikacji detoksu cyfrowego. To narzędzie, które nie tylko pomaga Ci rozwijać się, badać i poznawać świat, ale także umożliwia zamianę zasobów na niezapomniane wrażenia.\nWraz z naszą aplikacją, możesz odkrywać nieznane obszary życia bez przeszkód ze strony elektronicznych urządzeń. Pozwól sobie na pełne zanurzenie w doświadczeniach, gdzie ekran nie będzie dominującym elementem.\nRozwijaj swoje zainteresowania i pasje, korzystając z propozycji aplikacji detoksu cyfrowego. Pozwól, aby każde przeżycie stało się inspiracją do dalszego rozwoju i poszukiwania nowych możliwości.\nPamiętaj, że wolność od cyfrowego kuszenia to nie tylko chwila oderwania od ekranów, ale prawdziwa podróż ku autentycznym doświadczeniom. Dzięki naszej aplikacji, możesz śmiało poszukiwać nowych przygód, nie obawiając się technologicznych ograniczeń.\nNiech poszukiwanie nowych doświadczeń stanie się dla Ciebie inspiracją do ciągłego rozwoju i otwierania się na świat w pełni, bez zakłóceń związanych z nadmiernym korzystaniem z urządzeń elektronicznych.")
         ]
         
+        func setEvents() {
+            DispatchQueue.main.async {
+                self.eventItems = DefaultsService.getEventItems().sorted(by: {
+                    $0.date > $1.date
+                })
+            }
+        }
+        
+        func deleteEvent(id: String) {
+            DispatchQueue.main.async {
+                DefaultsService.removeEventWith(eventId: id)
+                self.setEvents()
+            }
+        }
     }
 }
 
 extension HomeView {
+    struct EventItem: Identifiable, Hashable, Codable {
+        private(set) var id = UUID().uuidString
+        private(set) var date = Date()
+        var name: String
+        var amount: Double
+    }
+    
     struct MotivationItem: Identifiable, Hashable {
         private(set) var id = UUID()
         var image: String

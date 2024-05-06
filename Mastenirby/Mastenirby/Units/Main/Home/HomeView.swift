@@ -20,8 +20,34 @@ struct HomeView: View {
                     VStack(spacing: 10) {
                         // Top image
                         TopWallPaperView(title: "Dom")
+                            .overlay {
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        NavigationLink(destination: AddEventView()) {
+                                            Circle()
+                                                .foregroundStyle(Colors.greenCustom.swiftUIColor)
+                                                .frame(width: 34)
+                                                .overlay {
+                                                    Image(systemName: "plus")
+                                                        .foregroundStyle(.white)
+                                                }
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                                .padding()
+                            }
                         
                         // Events
+                        ForEach(viewModel.eventItems) { event in
+                            NavigationLink(value: event) {
+                                EventCell(item: event) { idToDelete in
+                                    viewModel.deleteEvent(id: idToDelete)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 10)
                         
                         // Motivation
                         LazyVGrid(columns: [GridItem(.flexible(), spacing: 10),
@@ -39,6 +65,12 @@ struct HomeView: View {
             }
             .navigationDestination(for: HomeView.MotivationItem.self) { item in
                 MotivationDetailsView(item: item)
+            }
+            .navigationDestination(for: HomeView.EventItem.self) { item in
+                AddEventView(item: item)
+            }
+            .onAppear {
+                viewModel.setEvents()
             }
         }
     }

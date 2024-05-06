@@ -27,6 +27,7 @@ internal enum Asset {
   internal static let motivation2 = ImageAsset(name: "motivation2")
   internal static let motivation3 = ImageAsset(name: "motivation3")
   internal static let motivation4 = ImageAsset(name: "motivation4")
+  internal static let placeholder = ImageAsset(name: "placeholder")
   internal static let visasTab = ImageAsset(name: "VisasTab")
   internal static let analyticsTab = ImageAsset(name: "analyticsTab")
   internal static let analyticsTabSelected = ImageAsset(name: "analyticsTabSelected")

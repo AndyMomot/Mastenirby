@@ -26,6 +26,7 @@ struct MotivationCell: View {
         }
         .background(Color.white)
         .cornerRadius(40)
+        .shadow(color: .black.opacity(0.2), radius: 2)
     }
 }
 

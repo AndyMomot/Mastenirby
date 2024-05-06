@@ -35,49 +35,33 @@ struct TabBarView: View {
         ZStack {
             Rectangle()
                 .foregroundStyle(Colors.background.swiftUIColor)
-                .frame(height: bounds.height * 0.133)
             
             HStack {
                 Spacer()
                 ForEach(tabIndices, id: \.self) { index in
                     let item = items[index]
-                    if selectedItem == index {
-                        ZStack {
-                            Asset.tabGreenBackground.swiftUIImage
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: bounds.width * 0.21)
-                            VStack(spacing: 5) {
-                                Image(item.selectedImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: bounds.width * 0.112)
-                                
-                                Text(item.title)
-                                    .foregroundStyle(Color.white)
-                                    .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 10))
-                            }
-                        }
-                        .onTapGesture {
-                            withAnimation {
-                                selectedItem = index
-                            }
-                        }
-                    } else {
+                    
+                    ZStack {
+                        Asset.tabGreenBackground.swiftUIImage
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: bounds.width * 0.14)
+                            .opacity(selectedItem == index ? 1 : 0)
+                        
                         VStack(spacing: 5) {
-                            Image(item.image)
+                            Image(selectedItem == index ? item.selectedImage : item.image)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(maxWidth: bounds.width * 0.112)
+                                .frame(height: bounds.width * 0.06)
                             
                             Text(item.title)
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(selectedItem == index  ? .white : .black)
                                 .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 10))
                         }
-                        .onTapGesture {
-                            withAnimation {
-                                selectedItem = index
-                            }
+                    }
+                    .onTapGesture {
+                        withAnimation {
+                            selectedItem = index
                         }
                     }
                     
@@ -86,6 +70,7 @@ struct TabBarView: View {
             }
         }
         .shadow(color: .black.opacity(0.2), radius: 8, y: -4)
+        .frame(height: bounds.height * 0.098)
     }
 }
 
