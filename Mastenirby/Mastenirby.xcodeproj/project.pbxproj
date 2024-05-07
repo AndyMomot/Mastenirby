@@ -66,6 +66,9 @@
 		479D2E0A2BE905EA00202541 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E072BE905EA00202541 /* FileManagerService.swift */; };
 		479D2E0B2BE905EA00202541 /* DefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E092BE905EA00202541 /* DefaultsService.swift */; };
 		479D2E0E2BE9123C00202541 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E0D2BE9123C00202541 /* EventCell.swift */; };
+		479D2E112BEA036F00202541 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E102BEA036F00202541 /* CustomAlert.swift */; };
+		479D2E152BEA0E1B00202541 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E142BEA0E1B00202541 /* BudgetViewModel.swift */; };
+		479D2E172BEA225800202541 /* Comparable+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E162BEA225800202541 /* Comparable+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,9 @@
 		479D2E072BE905EA00202541 /* FileManagerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
 		479D2E092BE905EA00202541 /* DefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsService.swift; sourceTree = "<group>"; };
 		479D2E0D2BE9123C00202541 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		479D2E102BEA036F00202541 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		479D2E142BEA0E1B00202541 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
+		479D2E162BEA225800202541 /* Comparable+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,7 @@
 		47047C4A2BE506E200F083CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				479D2E0F2BEA035500202541 /* Alerts */,
 				479D2E012BE8E7DC00202541 /* StepSlider */,
 				479D2DFD2BE8E65400202541 /* ImagePicker */,
 				479D2DFB2BE8E65400202541 /* InputField */,
@@ -335,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				475490A12BE3C95B00B325F2 /* BudgetView.swift */,
+				479D2E142BEA0E1B00202541 /* BudgetViewModel.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 			children = (
 				479D2DF92BE8E3D900202541 /* View+Additions.swift */,
 				479D2E042BE8EBAC00202541 /* Double+Additions.swift */,
+				479D2E162BEA225800202541 /* Comparable+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,6 +466,14 @@
 				479D2E062BE905EA00202541 /* FileManager */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		479D2E0F2BEA035500202541 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				479D2E102BEA036F00202541 /* CustomAlert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,7 +612,9 @@
 				479D2DF72BE8DF8F00202541 /* AddEventViewModel.swift in Sources */,
 				47047C4F2BE50A3400F083CE /* MotivationCell.swift in Sources */,
 				479D2E002BE8E65400202541 /* ImagePicker.swift in Sources */,
+				479D2E112BEA036F00202541 /* CustomAlert.swift in Sources */,
 				479D2DFF2BE8E65400202541 /* InputFieldView.swift in Sources */,
+				479D2E172BEA225800202541 /* Comparable+Additions.swift in Sources */,
 				475490642BE3B1FA00B325F2 /* PreloaderView.swift in Sources */,
 				479D2E052BE8EBAC00202541 /* Double+Additions.swift in Sources */,
 				475490A42BE3C96200B325F2 /* VisasView.swift in Sources */,
@@ -605,6 +624,7 @@
 				475490662BE3B2B600B325F2 /* RootContentViewModel.swift in Sources */,
 				4754906B2BE3BD6400B325F2 /* TabBarViewModel.swift in Sources */,
 				479D2E0E2BE9123C00202541 /* EventCell.swift in Sources */,
+				479D2E152BEA0E1B00202541 /* BudgetViewModel.swift in Sources */,
 				4754906D2BE3BDA300B325F2 /* TabBarView.swift in Sources */,
 				479D2E032BE8E7E400202541 /* StepSliderView.swift in Sources */,
 				479D2DFA2BE8E3D900202541 /* View+Additions.swift in Sources */,

@@ -12,6 +12,7 @@ struct EventCell: View {
     var onDelete: (_ id: String) -> Void
     
     @State private var itemImage: Image = Asset.placeholder.swiftUIImage
+    @State private var progress = 0.0
     
     var body: some View {
         VStack(spacing: 10) {
@@ -27,10 +28,23 @@ struct EventCell: View {
                         .foregroundStyle(.black)
                         .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 17))
                     Spacer()
-                    Text("\(item.amount.string())$")
+                    Text("\(item.goal.string())$")
                         .foregroundStyle(Colors.greenCustom.swiftUIColor)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 17))
                 }
+                
+                HStack {
+                    Text("Zebrane")
+                        .foregroundStyle(.black)
+                        .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 17))
+                    Spacer()
+                    Text("\(item.amount.string())$")
+                        .foregroundStyle(.black)
+                        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 17))
+                }
+                
+                ProgressView(value: progress.clamped(to: 0.0...1.0))
+                    .accentColor(Colors.greenCustom.swiftUIColor)
             }
             .padding(20)
         }
@@ -59,6 +73,10 @@ struct EventCell: View {
         .cornerRadius(40, corners: .allCorners)
         .shadow(color: .black.opacity(0.2), radius: 2)
         .onAppear {
+            withAnimation {
+                progress = item.amount / item.goal
+            }
+            
             guard let data = FileManagerService().getFile(forPath: item.id),
             let image = UIImage(data: data)
             else { return }
@@ -72,7 +90,7 @@ struct EventCell: View {
         Colors.background.swiftUIColor
             .ignoresSafeArea()
         EventCell(item: .init(name: "Lekcja malarstwa", 
-                              amount: 500)) { _ in
+                              goal: 500)) { _ in
             
         }
     }

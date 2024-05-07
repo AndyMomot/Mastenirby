@@ -47,6 +47,8 @@ struct AddEventView: View {
                             VStack(spacing: 20) {
                                 HStack {
                                     Text("Tworzenie celu")
+                                        .foregroundStyle(.black)
+                                        .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 17))
                                     Spacer()
                                     
                                     Button {
@@ -62,19 +64,37 @@ struct AddEventView: View {
                                                text: $viewModel.name)
                                 
                                 HStack {
-                                    Text("Suma")
+                                    Text("Bramka")
                                         .foregroundStyle(.black)
                                         .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 15))
                                     Spacer()
                                     
-                                    Text("\(viewModel.amount.string())$")
+                                    Text("\(viewModel.goal.string())$")
                                         .foregroundStyle(Colors.greenCustom.swiftUIColor)
                                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 15))
                                 }
                                 
                                 StepSlider(
-                                    value: $viewModel.amount,
-                                    step: 0.5)
+                                    value: $viewModel.goal,
+                                    step: 1.0)
+                                
+                                if item != nil {
+                                    HStack {
+                                        Picker(selection: $viewModel.selectedSegmentIndex, label: Text("Segments")) {
+                                            ForEach(0..<2) { index in
+                                                Text(viewModel.segments[index])
+                                                    .foregroundColor(.black)
+                                            }
+                                            .foregroundStyle(.black)
+                                        }
+                                        
+                                        Spacer()
+                                    }
+                                    
+                                    InputFieldView(title: "Kwota",
+                                                   text: $viewModel.amountText)
+                                    .keyboardType(.numberPad)
+                                }
                             }
                             .padding()
                         }

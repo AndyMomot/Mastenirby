@@ -43,7 +43,8 @@ struct HomeView: View {
                         ForEach(viewModel.eventItems) { event in
                             NavigationLink(value: event) {
                                 EventCell(item: event) { idToDelete in
-                                    viewModel.deleteEvent(id: idToDelete)
+                                    viewModel.eventIdToDelete = idToDelete
+                                    viewModel.showDeleteEventAlert.toggle()
                                 }
                             }
                         }
@@ -61,6 +62,25 @@ struct HomeView: View {
                         }
                                   .padding(.horizontal, 10)
                     }
+                }
+                
+                // Delete event alert
+                if viewModel.showDeleteEventAlert {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                    CustomAlert(
+                        title: "Usuwać ?",
+                        message: "Czy na pewno chcesz usunąć ten cel?",
+                        okTitle: "Usuwać",
+                        cancelTitle: "Ratować",
+                        onOkay: {
+                            viewModel.deleteEvent()
+                            viewModel.showDeleteEventAlert.toggle()
+                        },
+                        onCancel: {
+                            viewModel.showDeleteEventAlert.toggle()
+                        })
+                    .padding()
                 }
             }
             .navigationDestination(for: HomeView.MotivationItem.self) { item in

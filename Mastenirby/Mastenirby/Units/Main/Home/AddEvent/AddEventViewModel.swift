@@ -13,12 +13,16 @@ extension AddEventView {
         @Published var showGallery = false
         @Published var selectedImageData: Data = .init()
         @Published var name: String = ""
-        @Published var amount: Double = .zero
+        @Published var goal: Double = .zero
+        @Published var amountText: String = ""
+        
+        @Published var selectedSegmentIndex = 0
+        let segments = ["Uzupełniać", "Wypłacić"]
         
         func setItem(item: HomeView.EventItem?) {
             guard let item = item else { return }
             name = item.name
-            amount = item.amount
+            goal = item.goal
             
             guard let data = FileManagerService().getFile(forPath: item.id) else { return }
             selectedImageData = data
@@ -46,7 +50,7 @@ extension AddEventView {
 private extension AddEventView.AddEventViewModel {
     func addEvent(completion: @escaping () -> Void) {
         guard isValidFields() else { return }
-        let item = HomeView.EventItem(name: name, amount: amount)
+        let item = HomeView.EventItem(name: name, goal: goal)
         DefaultsService.setEvent(item: item)
         setImage(data: selectedImageData, forPath: item.id)
         completion()
@@ -57,15 +61,26 @@ private extension AddEventView.AddEventViewModel {
         var items = DefaultsService.getEventItems()
         if let index = items.firstIndex(where: { $0.id == event.id }) {
             items[index].name = name
-            items[index].amount = amount
+            items[index].goal = goal
             setImage(data: selectedImageData, forPath: items[index].id)
+            
+            if let amount = Double(amountText), amount > .zero {
+                switch selectedSegmentIndex {
+                case 0:
+                    items[index].amount += amount
+                case 1:
+                    items[index].amount -= amount
+                default:
+                    break
+                }
+            }
         }
         DefaultsService.setEvent(items: items)
         completion()
     }
     
     func isValidFields() -> Bool {
-        return !name.isEmpty && amount > .zero
+        return !name.isEmpty && goal > .zero
     }
     
     func setImage(data: Data, forPath path: String) {

@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct BudgetView: View {
+    @StateObject private var viewModel = BudgetViewModel()
+    
     var body: some View {
-        Text("BudgetView")
+        ZStack {
+            Colors.background.swiftUIColor
+                .ignoresSafeArea()
+            
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 10) {
+                    // Top image
+                    TopWallPaperView(title: "Budżet")
+                }
+            }
+        }
     }
 }
 
