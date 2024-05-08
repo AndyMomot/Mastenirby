@@ -50,6 +50,7 @@ extension HomeView {
         private(set) var id = UUID().uuidString
         private(set) var date = Date()
         var name: String
+        var isDetoxification: Bool
         var goal: Double
         var amount: Double = .zero
     }

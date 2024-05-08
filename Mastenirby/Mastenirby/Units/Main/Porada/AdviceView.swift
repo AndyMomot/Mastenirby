@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct BudgetView: View {
-    @StateObject private var viewModel = BudgetViewModel()
+struct AdviceView: View {
+    @StateObject private var viewModel = AdviceViewModel()
     
     var body: some View {
         ZStack {
@@ -19,6 +19,12 @@ struct BudgetView: View {
                 VStack(spacing: 10) {
                     // Top image
                     TopWallPaperView(title: "Budżet")
+                    
+                    // Advice items
+                    ForEach(viewModel.adviсeItems) { item in
+                        AdviceCell(item: item)
+                    }
+                    .padding(.horizontal)
                 }
             }
         }
@@ -26,5 +32,5 @@ struct BudgetView: View {
 }
 
 #Preview {
-    BudgetView()
+    AdviceView()
 }

@@ -17,7 +17,7 @@ struct TabBarView: View {
               title: "Dom"),
         .init(image: Asset.budgetTab.name,
               selectedImage: Asset.budgetTabSelected.name,
-              title: "Budżet"),
+              title: "Porada"),
         .init(image: Asset.visasTab.name,
               selectedImage: Asset.visasTabSelected.name,
               title: "Wizy"),

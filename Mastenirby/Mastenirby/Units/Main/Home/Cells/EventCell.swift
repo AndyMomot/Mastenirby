@@ -63,7 +63,6 @@ struct EventCell: View {
                                     .foregroundStyle(.white)
                             }
                     }
-
                 }
                 Spacer()
             }
@@ -90,6 +89,7 @@ struct EventCell: View {
         Colors.background.swiftUIColor
             .ignoresSafeArea()
         EventCell(item: .init(name: "Lekcja malarstwa", 
+                              isDetoxification: false,
                               goal: 500)) { _ in
             
         }

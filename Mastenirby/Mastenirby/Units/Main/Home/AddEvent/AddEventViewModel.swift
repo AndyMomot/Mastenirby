@@ -15,6 +15,7 @@ extension AddEventView {
         @Published var name: String = ""
         @Published var goal: Double = .zero
         @Published var amountText: String = ""
+        @Published var isDetoxification = false
         
         @Published var selectedSegmentIndex = 0
         let segments = ["Uzupełniać", "Wypłacić"]
@@ -50,7 +51,9 @@ extension AddEventView {
 private extension AddEventView.AddEventViewModel {
     func addEvent(completion: @escaping () -> Void) {
         guard isValidFields() else { return }
-        let item = HomeView.EventItem(name: name, goal: goal)
+        let item = HomeView.EventItem(name: name,
+                                      isDetoxification: isDetoxification, 
+                                      goal: goal)
         DefaultsService.setEvent(item: item)
         setImage(data: selectedImageData, forPath: item.id)
         completion()

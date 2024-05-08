@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InputFieldView: View {
     var title: String?
+    var rightImage: String?
     @Binding var text: String
     
     var body: some View {
@@ -31,10 +32,19 @@ struct InputFieldView: View {
                     .cornerRadius(10)
                     .frame(height: 44)
                 
-                TextField(text: $text) {}
-                    .foregroundColor(.black)
-                    .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 14))
-                    .padding(.horizontal)
+                HStack(spacing: 8) {
+                    TextField(text: $text) {}
+                        .foregroundColor(.black)
+                        .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 14))
+                    
+                    if let image = UIImage(named: rightImage ?? "") {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 26)
+                    }
+                }
+                .padding(.horizontal)
             }
         }
     }
@@ -42,6 +52,8 @@ struct InputFieldView: View {
 
 struct InputFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        InputFieldView(title: "Имя", text: .constant("Имя"))
+        InputFieldView(title: "Имя",
+                       rightImage: Asset.starYellow.name,
+                       text: .constant("Имя"))
     }
 }

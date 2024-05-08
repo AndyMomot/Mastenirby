@@ -16,8 +16,8 @@ extension TabBar {
 extension TabBar {
     enum TabBarSelectionView: Int {
         case home = 0
-        case budget = 1
-        case visas = 2
+        case advice = 1
+        case сhallenges = 2
         case assets = 3
         case analyzes = 4
     }

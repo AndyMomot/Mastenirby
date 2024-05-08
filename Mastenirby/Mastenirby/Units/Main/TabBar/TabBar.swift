@@ -17,12 +17,12 @@ struct TabBar: View {
                     .tag(TabBarSelectionView.home.rawValue)
                     .environmentObject(viewModel)
                 
-                BudgetView()
-                    .tag(TabBarSelectionView.budget.rawValue)
+                AdviceView()
+                    .tag(TabBarSelectionView.advice.rawValue)
                     .environmentObject(viewModel)
                 
-                VisasView()
-                    .tag(TabBarSelectionView.visas.rawValue)
+                ChallengesView()
+                    .tag(TabBarSelectionView.сhallenges.rawValue)
                     .environmentObject(viewModel)
                 
                 AssetsView()

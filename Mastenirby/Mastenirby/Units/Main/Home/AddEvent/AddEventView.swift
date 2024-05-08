@@ -74,6 +74,16 @@ struct AddEventView: View {
                                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 15))
                                 }
                                 
+                                HStack {
+                                    Text("Te odpady pomagają w detoksykacji")
+                                        .foregroundStyle(.black)
+                                        .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 15))
+                                    
+                                    Spacer()
+                                    
+                                    Toggle(isOn: $viewModel.isDetoxification, label: {})
+                                }
+                                
                                 StepSlider(
                                     value: $viewModel.goal,
                                     step: 1.0)

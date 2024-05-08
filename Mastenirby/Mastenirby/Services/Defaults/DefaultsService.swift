@@ -42,9 +42,40 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static func setChallenge(item: ChallengeView.ChallengeModel) {
+        var challenge = getChallengeItems()
+        challenge.append(item)
+        setChallenge(items: challenge)
+    }
+    
+    static func setChallenge(items: [ChallengeView.ChallengeModel]) {
+        if let data = try? JSONEncoder().encode(items) {
+            standard.set(data, forKey: Keys.challenges.rawValue)
+        }
+    }
+    
+    static func getChallengeItems() -> [ChallengeView.ChallengeModel] {
+        if let data = standard.object(forKey: Keys.challenges.rawValue) as? Data {
+            let items = try? JSONDecoder().decode([ChallengeView.ChallengeModel].self, from: data)
+            return items ?? []
+        }
+        return []
+    }
+    
+    static func removeChallengeWith(challengeId: String) {
+        var challenges = getChallengeItems()
+        if let index = challenges.firstIndex(where: { $0.id == challengeId }) {
+            challenges.remove(at: index)
+            setChallenge(items: challenges)
+        }
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
         case events
+        case challenges
     }
 }
