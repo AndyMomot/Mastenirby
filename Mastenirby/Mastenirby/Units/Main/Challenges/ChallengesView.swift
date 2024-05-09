@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChallengesView: View {
     @StateObject private var viewModel = ChallengesViewModel()
+    private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {
@@ -19,11 +20,36 @@ struct ChallengesView: View {
                 VStack(spacing: 10) {
                     // Top image
                     TopWallPaperView(title: "Wizy")
-                     
-                    ForEach(viewModel.challenges) { challenge in
-                        ChallengeCell(item: challenge) { action in
-                            
+                        .overlay {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    Asset.starYellow.swiftUIImage
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 36)
+                                        .overlay {
+                                            Text("\(viewModel.prizeNumber)")
+                                                .foregroundStyle(.black)
+                                                .font(Fonts.SFProDisplay.heavy.swiftUIFont(size: 12))
+                                        }
+                                }
+                                
+                                Spacer()
+                            }
+                            .padding()
                         }
+                    
+                    ForEach(viewModel.challenges) { challenge in
+                        Button {
+                            viewModel.challengeDetailToShow = challenge
+                            viewModel.showChallengeDetails = true
+                        } label: {
+                            ChallengeCell(item: challenge) { action in
+                                viewModel.onChallangeCell(action: action, for: challenge)
+                            }
+                        }
+                        
                     }
                     .padding(.horizontal)
                 }
@@ -66,7 +92,26 @@ struct ChallengesView: View {
                 }
             }
         }
+        .overlay {
+            if viewModel.showChallengeDetails, let item = viewModel.challengeDetailToShow {
+                ZStack {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            viewModel.showAddChallenge = false
+                            viewModel.challengeDetailToShow = nil
+                        }
+                    ChallengeDetailsView(item: item) {
+                        
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
         .onAppear {
+            viewModel.getChallenges()
+        }
+        .onReceive(timer) { input in
             viewModel.getChallenges()
         }
     }

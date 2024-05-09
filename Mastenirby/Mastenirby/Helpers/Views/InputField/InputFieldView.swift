@@ -37,7 +37,7 @@ struct InputFieldView: View {
                         .foregroundColor(.black)
                         .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 14))
                     
-                    if let image = UIImage(named: rightImage ?? "") {
+                    if let imageName = rightImage, let image = UIImage(named: imageName) {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()

@@ -47,8 +47,11 @@ extension ChallengeView {
         
         var progress: Double {
             if let deadline = deadline {
-                let hoursLeft = Date().hoursUntilFutureDate(futureDate: deadline)
-                return Double(hoursLeft) / Double(hours)
+                if let difference = Date().differenceBetweenDatesInHoursAndMinutes(from: .init(), to: deadline) {
+                    let minutesLeft = Double((difference.hours * 60) + difference.minutes)
+                    let minutes = Double(hours * 60)
+                    return (minutes - minutesLeft) / minutes
+                }
             }
             
             return 0.0
@@ -59,22 +62,11 @@ extension ChallengeView {
                 return "\(hours) godz"
             }
             
-            let hoursLeft = Date().hoursUntilFutureDate(futureDate: deadline)
-            
-            var dateFormatter: DateFormatter {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "HH'h' mm'm'"
-                return formatter
+            if let difference = Date().differenceBetweenDatesInHoursAndMinutes(from: .init(), to: deadline) {
+                return "\(difference.hours)h \(difference.minutes)m"
             }
             
-            let components = Calendar.current.dateComponents([.hour, .minute], from: deadline)
-            
-            let hourString = "\(components.hour ?? 0)g"
-            let minuteString = "\(components.minute ?? 0)m"
-            
-            let formattedString = "\(hourString) \(minuteString)"
-            
-            return formattedString
+            return "0h 0m"
         }
     }
 }

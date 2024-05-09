@@ -72,10 +72,29 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static var prizeNumber: Int {
+        standard.integer(forKey: Keys.prize.rawValue)
+    }
+    
+    static func addPrice(number: Int) {
+        let newValue = prizeNumber + number
+        standard.set(newValue, forKey: Keys.prize.rawValue)
+    }
+    
+    static func subtractPrice(number: Int) -> Bool {
+        guard number < prizeNumber else { return false }
+        let newValue = prizeNumber - number
+        standard.set(newValue, forKey: Keys.prize.rawValue)
+        return true
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
         case events
         case challenges
+        case prize
     }
 }

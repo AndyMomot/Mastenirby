@@ -40,14 +40,16 @@ extension Date {
         return weekday == 7 || weekday == 1 // Суббота (7) и воскресенье (1) - выходные дни в Польше
     }
     
-    func hoursUntilFutureDate(futureDate: Date) -> Int {
+    func differenceBetweenDatesInHoursAndMinutes(from startDate: Date, to endDate: Date) -> (hours: Int, minutes: Int)? {
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour],
-                                                 from: .init(),
-                                                 to: futureDate)
-        return components.hour ?? .zero
+        let components = calendar.dateComponents([.hour, .minute], from: startDate, to: endDate)
+        
+        guard let hours = components.hour, let minutes = components.minute else {
+            return nil
+        }
+        
+        return (hours, minutes)
     }
-
 }
 
 extension Date {
