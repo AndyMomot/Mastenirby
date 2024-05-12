@@ -13,8 +13,10 @@ extension ChallengesView {
         @Published var showAddChallenge = false
         @Published var challenges: [ChallengeView.ChallengeModel] = []
         @Published var showChallengeDetails = false
+        @Published var showDeleteChallengeAlert = false
         
         var challengeDetailToShow: ChallengeView.ChallengeModel?
+        var challengeDetailToDelete: ChallengeView.ChallengeModel?
         
         func getChallenges() {
             DispatchQueue.main.async {
@@ -36,7 +38,7 @@ extension ChallengesView {
             }
         }
         
-        func onChallangeCell(action: ChallengeCell.Action, for item: ChallengeView.ChallengeModel) {
+        func onChallengeCell(action: ChallengeCell.Action, for item: ChallengeView.ChallengeModel) {
             DispatchQueue.main.async {
                 if let index = self.challenges.firstIndex(where: { $0.id == item.id }) {
                     switch action {
@@ -47,10 +49,32 @@ extension ChallengesView {
                         DefaultsService.setChallenge(items: self.challenges)
                         self.getChallenges()
                     case .finish:
-                        self.challenges.remove(at: index)
-                        DefaultsService.setChallenge(items: self.challenges)
-                        self.getChallenges()
+                        self.challengeDetailToDelete = item
+                        self.showDeleteChallengeAlert = true
                     }
+                }
+            }
+        }
+        
+        func hideChallengeDetails() {
+            showAddChallenge = false
+            challengeDetailToShow = nil
+        }
+        
+        func onDeleteChallenge() {
+            DispatchQueue.main.async {
+                guard let item = self.challengeDetailToDelete else {
+                    return
+                }
+                
+                if let index = self.challenges.firstIndex(where: { $0.id == item.id }) {
+                    self.challenges.remove(at: index)
+                    DefaultsService.setChallenge(items: self.challenges)
+                    
+                    self.challengeDetailToDelete = nil
+                    self.showDeleteChallengeAlert = false
+                    
+                    self.getChallenges()
                 }
             }
         }

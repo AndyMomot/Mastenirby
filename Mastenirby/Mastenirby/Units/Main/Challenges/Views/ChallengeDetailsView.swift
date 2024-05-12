@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChallengeDetailsView: View {
     let item: ChallengeView.ChallengeModel
-    var onCancel: () -> Void
+    var onAction: (ChallengeCell.Action) -> Void
     
     @State private var progress = 0.0
     
@@ -54,9 +54,17 @@ struct ChallengeDetailsView: View {
             ProgressView(value: progress.clamped(to: 0.0...1.0))
                 .accentColor(Colors.greenCustom.swiftUIColor)
             
-            NextButtonView(title: "Zamknąć",
-                           color: Colors.redCustom.swiftUIColor) {
-                onCancel()
+            if item.deadline != nil {
+                NextButtonView(
+                    title: "Zakończ wcześniej",
+                    color: Colors.redCustom.swiftUIColor) {
+                        onAction(.finish)
+                    }
+            } else {
+                NextButtonView(
+                    title: "Zaczynać") {
+                        onAction(.start)
+                    }
             }
         }
         .padding()
@@ -75,5 +83,5 @@ struct ChallengeDetailsView: View {
         hours: 6,
         prize: 25,
         deadline: .init().addOrSubtract(component: .hour, value: 3)
-    )) {}
+    )) { _ in}
 }

@@ -77,7 +77,7 @@ struct ChallengeView: View {
 
 #Preview {
     ZStack {
-        Color.black.opacity(0.4)
+        Colors.transparentBackground.swiftUIColor
             .ignoresSafeArea()
         
         ChallengeView {}

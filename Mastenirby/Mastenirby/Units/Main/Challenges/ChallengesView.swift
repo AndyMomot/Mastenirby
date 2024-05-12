@@ -46,7 +46,8 @@ struct ChallengesView: View {
                             viewModel.showChallengeDetails = true
                         } label: {
                             ChallengeCell(item: challenge) { action in
-                                viewModel.onChallangeCell(action: action, for: challenge)
+                                viewModel.onChallengeCell(action: action, for: challenge)
+                                viewModel.hideChallengeDetails()
                             }
                         }
                         
@@ -82,7 +83,7 @@ struct ChallengesView: View {
         .overlay {
             if viewModel.showAddChallenge {
                 ZStack {
-                    Color.black.opacity(0.4)
+                    Colors.transparentBackground.swiftUIColor
                         .ignoresSafeArea()
                     
                     ChallengeView {
@@ -95,16 +96,35 @@ struct ChallengesView: View {
         .overlay {
             if viewModel.showChallengeDetails, let item = viewModel.challengeDetailToShow {
                 ZStack {
-                    Color.black.opacity(0.4)
+                    Colors.transparentBackground.swiftUIColor
                         .ignoresSafeArea()
                         .onTapGesture {
-                            viewModel.showAddChallenge = false
-                            viewModel.challengeDetailToShow = nil
+                            viewModel.hideChallengeDetails()
                         }
-                    ChallengeDetailsView(item: item) {
-                        
+                    ChallengeDetailsView(item: item) { action in
+                        viewModel.onChallengeCell(action: action, for: item)
+                        viewModel.hideChallengeDetails()
                     }
                     .padding(.horizontal)
+                }
+            }
+        }
+        .overlay {
+            if viewModel.showDeleteChallengeAlert {
+                ZStack {
+                    Colors.transparentBackground.swiftUIColor
+                        .ignoresSafeArea()
+                    
+                    CustomAlert(
+                        title: "Skończyć wcześniej?",
+                        message: "Czy na pewno chcesz zakończyć to wyzwanie wcześniej?",
+                        okTitle: "Skończyć",
+                        cancelTitle: "Kontynuować") {
+                            viewModel.onDeleteChallenge()
+                        } onCancel: {
+                            viewModel.showDeleteChallengeAlert.toggle()
+                        }
+                        .padding(.horizontal)
                 }
             }
         }

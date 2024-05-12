@@ -71,6 +71,13 @@
 		479D2E152BEA0E1B00202541 /* AdviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E142BEA0E1B00202541 /* AdviceViewModel.swift */; };
 		479D2E172BEA225800202541 /* Comparable+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E162BEA225800202541 /* Comparable+Additions.swift */; };
 		479D2E1A2BEA32EC00202541 /* AdviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2E192BEA32EC00202541 /* AdviceCell.swift */; };
+		47B885292BF0A6DD00D3CE7D /* AssetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885282BF0A6DD00D3CE7D /* AssetsViewModel.swift */; };
+		47B8852C2BF0A92F00D3CE7D /* EventShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8852B2BF0A92F00D3CE7D /* EventShopView.swift */; };
+		47B8852E2BF0A93B00D3CE7D /* EventShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8852D2BF0A93B00D3CE7D /* EventShopViewModel.swift */; };
+		47B885312BF0B93400D3CE7D /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885302BF0B93400D3CE7D /* CreateProductView.swift */; };
+		47B885342BF0CAFE00D3CE7D /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885332BF0CAFE00D3CE7D /* ProductDetailView.swift */; };
+		47B885372BF0CCE700D3CE7D /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885362BF0CCE700D3CE7D /* CheckBox.swift */; };
+		47B885392BF0D58100D3CE7D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885382BF0D58100D3CE7D /* ProductCell.swift */; };
 		47FD76592BEB6CEE00F0987F /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */; };
 		47FD765C2BEB6D3700F0987F /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765B2BEB6D3700F0987F /* ChallengeView.swift */; };
 		47FD765E2BEB6D3F00F0987F /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */; };
@@ -146,6 +153,13 @@
 		479D2E142BEA0E1B00202541 /* AdviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceViewModel.swift; sourceTree = "<group>"; };
 		479D2E162BEA225800202541 /* Comparable+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Additions.swift"; sourceTree = "<group>"; };
 		479D2E192BEA32EC00202541 /* AdviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceCell.swift; sourceTree = "<group>"; };
+		47B885282BF0A6DD00D3CE7D /* AssetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewModel.swift; sourceTree = "<group>"; };
+		47B8852B2BF0A92F00D3CE7D /* EventShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShopView.swift; sourceTree = "<group>"; };
+		47B8852D2BF0A93B00D3CE7D /* EventShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShopViewModel.swift; sourceTree = "<group>"; };
+		47B885302BF0B93400D3CE7D /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
+		47B885332BF0CAFE00D3CE7D /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		47B885362BF0CCE700D3CE7D /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		47B885382BF0D58100D3CE7D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
 		47FD765B2BEB6D3700F0987F /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -176,6 +190,7 @@
 		47047C4A2BE506E200F083CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47B885352BF0CCD900D3CE7D /* ChekBox */,
 				479D2E0F2BEA035500202541 /* Alerts */,
 				479D2E012BE8E7DC00202541 /* StepSlider */,
 				479D2DFD2BE8E65400202541 /* ImagePicker */,
@@ -380,7 +395,9 @@
 		4754909C2BE3C8E400B325F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				47B8852A2BF0A91E00D3CE7D /* EventShop */,
 				475490A52BE3C96900B325F2 /* AssetsView.swift */,
+				47B885282BF0A6DD00D3CE7D /* AssetsViewModel.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -513,6 +530,34 @@
 				479D2E192BEA32EC00202541 /* AdviceCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		47B8852A2BF0A91E00D3CE7D /* EventShop */ = {
+			isa = PBXGroup;
+			children = (
+				47B8852F2BF0B90100D3CE7D /* Views */,
+				47B8852B2BF0A92F00D3CE7D /* EventShopView.swift */,
+				47B8852D2BF0A93B00D3CE7D /* EventShopViewModel.swift */,
+			);
+			path = EventShop;
+			sourceTree = "<group>";
+		};
+		47B8852F2BF0B90100D3CE7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47B885302BF0B93400D3CE7D /* CreateProductView.swift */,
+				47B885332BF0CAFE00D3CE7D /* ProductDetailView.swift */,
+				47B885382BF0D58100D3CE7D /* ProductCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47B885352BF0CCD900D3CE7D /* ChekBox */ = {
+			isa = PBXGroup;
+			children = (
+				47B885362BF0CCE700D3CE7D /* CheckBox.swift */,
+			);
+			path = ChekBox;
 			sourceTree = "<group>";
 		};
 		47FD765A2BEB6D2D00F0987F /* AddChallenge */ = {
@@ -657,12 +702,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47B885292BF0A6DD00D3CE7D /* AssetsViewModel.swift in Sources */,
+				47B8852E2BF0A93B00D3CE7D /* EventShopViewModel.swift in Sources */,
 				4754908E2BE3BE8600B325F2 /* Fonts.generated.swift in Sources */,
 				475490A02BE3C95200B325F2 /* HomeView.swift in Sources */,
 				475490002BE3ABE300B325F2 /* ViewController.swift in Sources */,
 				475490A82BE3C97000B325F2 /* AnalyzesView.swift in Sources */,
 				47548FFC2BE3ABE300B325F2 /* AppDelegate.swift in Sources */,
 				479D2DF22BE8D0D200202541 /* NextButtonView.swift in Sources */,
+				47B885372BF0CCE700D3CE7D /* CheckBox.swift in Sources */,
 				479D2E0A2BE905EA00202541 /* FileManagerService.swift in Sources */,
 				47047C562BE514F600F083CE /* MotivationDetailsView.swift in Sources */,
 				47047C4C2BE5071300F083CE /* TopWallPaperView.swift in Sources */,
@@ -671,6 +719,7 @@
 				475490112BE3ACB000B325F2 /* RootContentView.swift in Sources */,
 				47548FFE2BE3ABE300B325F2 /* SceneDelegate.swift in Sources */,
 				4754905A2BE3AE6B00B325F2 /* Strings.generated.swift in Sources */,
+				47B885392BF0D58100D3CE7D /* ProductCell.swift in Sources */,
 				475490A62BE3C96900B325F2 /* AssetsView.swift in Sources */,
 				475490442BE3AE6B00B325F2 /* Colors.generated.swift in Sources */,
 				4754903E2BE3AE6B00B325F2 /* Images.generated.swift in Sources */,
@@ -681,13 +730,16 @@
 				479D2E002BE8E65400202541 /* ImagePicker.swift in Sources */,
 				479D2E112BEA036F00202541 /* CustomAlert.swift in Sources */,
 				479D2DFF2BE8E65400202541 /* InputFieldView.swift in Sources */,
+				47B885342BF0CAFE00D3CE7D /* ProductDetailView.swift in Sources */,
 				479D2E172BEA225800202541 /* Comparable+Additions.swift in Sources */,
 				475490642BE3B1FA00B325F2 /* PreloaderView.swift in Sources */,
 				479D2E052BE8EBAC00202541 /* Double+Additions.swift in Sources */,
 				47FD765E2BEB6D3F00F0987F /* ChallengeViewModel.swift in Sources */,
+				47B8852C2BF0A92F00D3CE7D /* EventShopView.swift in Sources */,
 				475490A42BE3C96200B325F2 /* ChallengesView.swift in Sources */,
 				47047C512BE50A7300F083CE /* HomeViewModel.swift in Sources */,
 				479D2DF52BE8D60200202541 /* AddEventView.swift in Sources */,
+				47B885312BF0B93400D3CE7D /* CreateProductView.swift in Sources */,
 				479D2E0B2BE905EA00202541 /* DefaultsService.swift in Sources */,
 				475490662BE3B2B600B325F2 /* RootContentViewModel.swift in Sources */,
 				4754906B2BE3BD6400B325F2 /* TabBarViewModel.swift in Sources */,

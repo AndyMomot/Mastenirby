@@ -90,11 +90,36 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static func setProduct(item: EventShopView.ProductModel, for id: String) {
+        var products = getProductsFor(groupId: id)
+        products.append(item)
+        setProduct(items: products, for: id)
+    }
+    
+    static func setProduct(items: [EventShopView.ProductModel], for id: String) {
+        if let data = try? JSONEncoder().encode(items) {
+            let key = Keys.product.rawValue + id
+            standard.set(data, forKey: key)
+        }
+    }
+    
+    static func getProductsFor(groupId id: String) -> [EventShopView.ProductModel] {
+        let key = Keys.product.rawValue + id
+        if let data = standard.object(forKey: key) as? Data {
+            let items = try? JSONDecoder().decode([EventShopView.ProductModel].self, from: data)
+            return items ?? []
+        }
+        return []
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
         case events
         case challenges
         case prize
+        case product
     }
 }

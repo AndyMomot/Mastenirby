@@ -66,7 +66,7 @@ struct HomeView: View {
                 
                 // Delete event alert
                 if viewModel.showDeleteEventAlert {
-                    Color.black.opacity(0.4)
+                    Colors.transparentBackground.swiftUIColor
                         .ignoresSafeArea()
                     CustomAlert(
                         title: "Usuwać ?",
