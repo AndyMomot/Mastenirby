@@ -56,6 +56,7 @@
 		475490A62BE3C96900B325F2 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475490A52BE3C96900B325F2 /* AssetsView.swift */; };
 		475490A82BE3C97000B325F2 /* AnalyzesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475490A72BE3C97000B325F2 /* AnalyzesView.swift */; };
 		478FEB382BECAA8F004AB6AA /* ChallengeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478FEB372BECAA8F004AB6AA /* ChallengeDetailsView.swift */; };
+		479B1FA72BF11DFF00114FA4 /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B1FA62BF11DFF00114FA4 /* CalendarEventCell.swift */; };
 		479D2DF22BE8D0D200202541 /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2DF12BE8D0D200202541 /* NextButtonView.swift */; };
 		479D2DF52BE8D60200202541 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2DF42BE8D60200202541 /* AddEventView.swift */; };
 		479D2DF72BE8DF8F00202541 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D2DF62BE8DF8F00202541 /* AddEventViewModel.swift */; };
@@ -78,6 +79,12 @@
 		47B885342BF0CAFE00D3CE7D /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885332BF0CAFE00D3CE7D /* ProductDetailView.swift */; };
 		47B885372BF0CCE700D3CE7D /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885362BF0CCE700D3CE7D /* CheckBox.swift */; };
 		47B885392BF0D58100D3CE7D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885382BF0D58100D3CE7D /* ProductCell.swift */; };
+		47B8853F2BF106C400D3CE7D /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8853C2BF106C300D3CE7D /* CustomCalendarView.swift */; };
+		47B885402BF106C400D3CE7D /* DayOfMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8853D2BF106C300D3CE7D /* DayOfMonthCell.swift */; };
+		47B885412BF106C400D3CE7D /* CustomCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8853E2BF106C300D3CE7D /* CustomCalendarViewModel.swift */; };
+		47B885432BF1070600D3CE7D /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885422BF1070600D3CE7D /* String+Additions.swift */; };
+		47B885462BF111C500D3CE7D /* CreateReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885452BF111C500D3CE7D /* CreateReminderView.swift */; };
+		47B885482BF112B900D3CE7D /* CreateReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885472BF112B900D3CE7D /* CreateReminderViewModel.swift */; };
 		47FD76592BEB6CEE00F0987F /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */; };
 		47FD765C2BEB6D3700F0987F /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765B2BEB6D3700F0987F /* ChallengeView.swift */; };
 		47FD765E2BEB6D3F00F0987F /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */; };
@@ -138,6 +145,7 @@
 		475490A52BE3C96900B325F2 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		475490A72BE3C97000B325F2 /* AnalyzesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzesView.swift; sourceTree = "<group>"; };
 		478FEB372BECAA8F004AB6AA /* ChallengeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailsView.swift; sourceTree = "<group>"; };
+		479B1FA62BF11DFF00114FA4 /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
 		479D2DF12BE8D0D200202541 /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
 		479D2DF42BE8D60200202541 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		479D2DF62BE8DF8F00202541 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
@@ -160,6 +168,12 @@
 		47B885332BF0CAFE00D3CE7D /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		47B885362BF0CCE700D3CE7D /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		47B885382BF0D58100D3CE7D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		47B8853C2BF106C300D3CE7D /* CustomCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
+		47B8853D2BF106C300D3CE7D /* DayOfMonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOfMonthCell.swift; sourceTree = "<group>"; };
+		47B8853E2BF106C300D3CE7D /* CustomCalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalendarViewModel.swift; sourceTree = "<group>"; };
+		47B885422BF1070600D3CE7D /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		47B885452BF111C500D3CE7D /* CreateReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderView.swift; sourceTree = "<group>"; };
+		47B885472BF112B900D3CE7D /* CreateReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewModel.swift; sourceTree = "<group>"; };
 		47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
 		47FD765B2BEB6D3700F0987F /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -395,6 +409,7 @@
 		4754909C2BE3C8E400B325F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				47B8853A2BF1066400D3CE7D /* Calendar */,
 				47B8852A2BF0A91E00D3CE7D /* EventShop */,
 				475490A52BE3C96900B325F2 /* AssetsView.swift */,
 				47B885282BF0A6DD00D3CE7D /* AssetsViewModel.swift */,
@@ -431,6 +446,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		479B1FA52BF11DE600114FA4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47B8853D2BF106C300D3CE7D /* DayOfMonthCell.swift */,
+				479B1FA62BF11DFF00114FA4 /* CalendarEventCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		479D2DEF2BE8D0C100202541 /* TopWallPaper */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +483,7 @@
 		479D2DF82BE8E3C700202541 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				47B885422BF1070600D3CE7D /* String+Additions.swift */,
 				47FD76622BEB77F500F0987F /* Date+Additions.swift */,
 				479D2DF92BE8E3D900202541 /* View+Additions.swift */,
 				479D2E042BE8EBAC00202541 /* Double+Additions.swift */,
@@ -558,6 +583,34 @@
 				47B885362BF0CCE700D3CE7D /* CheckBox.swift */,
 			);
 			path = ChekBox;
+			sourceTree = "<group>";
+		};
+		47B8853A2BF1066400D3CE7D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				479B1FA52BF11DE600114FA4 /* Cells */,
+				47B885442BF111A400D3CE7D /* CreateReminder */,
+				47B8853B2BF106C300D3CE7D /* CustomCalendar */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		47B8853B2BF106C300D3CE7D /* CustomCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				47B8853C2BF106C300D3CE7D /* CustomCalendarView.swift */,
+				47B8853E2BF106C300D3CE7D /* CustomCalendarViewModel.swift */,
+			);
+			path = CustomCalendar;
+			sourceTree = "<group>";
+		};
+		47B885442BF111A400D3CE7D /* CreateReminder */ = {
+			isa = PBXGroup;
+			children = (
+				47B885452BF111C500D3CE7D /* CreateReminderView.swift */,
+				47B885472BF112B900D3CE7D /* CreateReminderViewModel.swift */,
+			);
+			path = CreateReminder;
 			sourceTree = "<group>";
 		};
 		47FD765A2BEB6D2D00F0987F /* AddChallenge */ = {
@@ -709,6 +762,8 @@
 				475490002BE3ABE300B325F2 /* ViewController.swift in Sources */,
 				475490A82BE3C97000B325F2 /* AnalyzesView.swift in Sources */,
 				47548FFC2BE3ABE300B325F2 /* AppDelegate.swift in Sources */,
+				47B885402BF106C400D3CE7D /* DayOfMonthCell.swift in Sources */,
+				47B8853F2BF106C400D3CE7D /* CustomCalendarView.swift in Sources */,
 				479D2DF22BE8D0D200202541 /* NextButtonView.swift in Sources */,
 				47B885372BF0CCE700D3CE7D /* CheckBox.swift in Sources */,
 				479D2E0A2BE905EA00202541 /* FileManagerService.swift in Sources */,
@@ -716,10 +771,14 @@
 				47047C4C2BE5071300F083CE /* TopWallPaperView.swift in Sources */,
 				475490A22BE3C95B00B325F2 /* AdviceView.swift in Sources */,
 				479D2E1A2BEA32EC00202541 /* AdviceCell.swift in Sources */,
+				47B885462BF111C500D3CE7D /* CreateReminderView.swift in Sources */,
 				475490112BE3ACB000B325F2 /* RootContentView.swift in Sources */,
+				479B1FA72BF11DFF00114FA4 /* CalendarEventCell.swift in Sources */,
+				47B885412BF106C400D3CE7D /* CustomCalendarViewModel.swift in Sources */,
 				47548FFE2BE3ABE300B325F2 /* SceneDelegate.swift in Sources */,
 				4754905A2BE3AE6B00B325F2 /* Strings.generated.swift in Sources */,
 				47B885392BF0D58100D3CE7D /* ProductCell.swift in Sources */,
+				47B885432BF1070600D3CE7D /* String+Additions.swift in Sources */,
 				475490A62BE3C96900B325F2 /* AssetsView.swift in Sources */,
 				475490442BE3AE6B00B325F2 /* Colors.generated.swift in Sources */,
 				4754903E2BE3AE6B00B325F2 /* Images.generated.swift in Sources */,
@@ -732,6 +791,7 @@
 				479D2DFF2BE8E65400202541 /* InputFieldView.swift in Sources */,
 				47B885342BF0CAFE00D3CE7D /* ProductDetailView.swift in Sources */,
 				479D2E172BEA225800202541 /* Comparable+Additions.swift in Sources */,
+				47B885482BF112B900D3CE7D /* CreateReminderViewModel.swift in Sources */,
 				475490642BE3B1FA00B325F2 /* PreloaderView.swift in Sources */,
 				479D2E052BE8EBAC00202541 /* Double+Additions.swift in Sources */,
 				47FD765E2BEB6D3F00F0987F /* ChallengeViewModel.swift in Sources */,

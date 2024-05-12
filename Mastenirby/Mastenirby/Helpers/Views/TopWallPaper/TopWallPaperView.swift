@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TopWallPaperView: View {
-    var title: String
+    var title: String?
     
     var body: some View {
         ZStack {
@@ -16,18 +16,21 @@ struct TopWallPaperView: View {
                 .resizable()
                 .scaledToFit()
                 .overlay {
-                    VStack {
-                        HStack {
-                            Text(title)
-                                .foregroundStyle(Colors.greenCustom.swiftUIColor)
-                                .font(Fonts.SFProDisplay.heavy.swiftUIFont(size: 22))
+                    if let title = title, !title.isEmpty {
+                        VStack {
+                            HStack {
+                                
+                                Text(title)
+                                    .foregroundStyle(Colors.greenCustom.swiftUIColor)
+                                    .font(Fonts.SFProDisplay.heavy.swiftUIFont(size: 22))
+                                Spacer()
+                            }
+                            .padding(.horizontal)
+                            
                             Spacer()
                         }
-                        .padding(.horizontal)
-                        
-                        Spacer()
+                        .padding(.vertical)
                     }
-                    .padding(.vertical)
                 }
         }
     }

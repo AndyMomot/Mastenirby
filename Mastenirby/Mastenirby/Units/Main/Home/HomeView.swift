@@ -83,14 +83,14 @@ struct HomeView: View {
                     .padding()
                 }
             }
+            .onAppear {
+                viewModel.setEvents()
+            }
             .navigationDestination(for: HomeView.MotivationItem.self) { item in
                 MotivationDetailsView(item: item)
             }
             .navigationDestination(for: HomeView.EventItem.self) { item in
                 AddEventView(item: item)
-            }
-            .onAppear {
-                viewModel.setEvents()
             }
         }
     }

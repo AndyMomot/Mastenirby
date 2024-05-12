@@ -114,6 +114,36 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static var getCalendarEvents: [CreateReminderView.EventModel] {
+        if let data = standard.object(forKey: Keys.calendarEvent.rawValue) as? Data {
+            let items = try? JSONDecoder().decode([CreateReminderView.EventModel].self, from: data)
+            return items ?? []
+        }
+        return []
+    }
+    
+    static func saveCalendar(event: CreateReminderView.EventModel) {
+        var events = getCalendarEvents
+        events.append(event)
+        if let data = try? JSONEncoder().encode(events) {
+            standard.set(data, forKey: Keys.calendarEvent.rawValue)
+        }
+    }
+    
+    static func removeCalendar(event: CreateReminderView.EventModel) {
+        var events = getCalendarEvents
+        
+        if let index = events.firstIndex(where: {$0.id == event.id}) {
+            events.remove(at: index)
+            
+            if let data = try? JSONEncoder().encode(events) {
+                standard.set(data, forKey: Keys.calendarEvent.rawValue)
+            }
+        }
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
@@ -121,5 +151,6 @@ extension DefaultsService {
         case challenges
         case prize
         case product
+        case calendarEvent
     }
 }

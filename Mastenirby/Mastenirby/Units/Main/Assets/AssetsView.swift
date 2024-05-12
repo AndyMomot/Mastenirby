@@ -19,7 +19,7 @@ struct AssetsView: View {
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 10) {
                         // Top image
-                        TopWallPaperView(title: "Dom")
+                        TopWallPaperView(title: "Aktywa")
                             .overlay {
                                 VStack {
                                     HStack {
@@ -41,9 +41,8 @@ struct AssetsView: View {
                         
                         HStack {
                             Spacer()
-                            Button {
-                                
-                            } label: {
+                            
+                            NavigationLink(destination: CustomCalendarView()) {
                                 Text("Kalendarz")
                                     .foregroundStyle(Colors.greenCustom.swiftUIColor)
                                     .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 17))
@@ -63,12 +62,12 @@ struct AssetsView: View {
                     }
                 }
             }
+            .onAppear {
+                viewModel.setEvents()
+            }
             .navigationDestination(for: HomeView.EventItem.self) { item in
                 // By something
                 EventShopView(item: item)
-            }
-            .onAppear {
-                viewModel.setEvents()
             }
         }
     }

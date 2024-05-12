@@ -25,6 +25,7 @@ internal enum Colors {
   internal static let greenCustom = ColorAsset(name: "GreenCustom")
   internal static let redCustom = ColorAsset(name: "RedCustom")
   internal static let background = ColorAsset(name: "background")
+  internal static let labelReversed = ColorAsset(name: "labelReversed")
   internal static let transparentBackground = ColorAsset(name: "transparentBackground")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
