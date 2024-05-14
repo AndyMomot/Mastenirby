@@ -50,6 +50,24 @@ extension Date {
         
         return (hours, minutes)
     }
+    
+    var startOfWeek: Date {
+        let calendar: Calendar = {
+            var calendar = Calendar.current
+            calendar.locale = Locale(identifier: "pl_PL")
+            calendar.firstWeekday = 3 // Понедельник
+            return calendar
+        }()
+        
+        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
+        return calendar.date(from: components)!
+    }
+    
+    var today: Date {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        return calendar.startOfDay(for: currentDate)
+    }
 }
 
 extension Date {
@@ -63,5 +81,6 @@ extension Date {
         case hhmm = "HH'h' mm'm'"
         case HHMM = "HH:mm"
         case ddMMYYHHmm = "dd.MM.yy HH:mm"
+        case dayOfWeek = "EEEE"
     }
 }

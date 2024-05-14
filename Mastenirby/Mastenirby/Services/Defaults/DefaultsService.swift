@@ -144,6 +144,24 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static func getDetoxCosts() -> [AddEventView.AddEventViewModel.DetoxCostModel] {
+        if let data = standard.object(forKey: Keys.detoxCosts.rawValue) as? Data {
+            let items = try? JSONDecoder().decode([AddEventView.AddEventViewModel.DetoxCostModel].self, from: data)
+            return items ?? []
+        }
+        return []
+    }
+    
+    static func saveDetox(cost: AddEventView.AddEventViewModel.DetoxCostModel) {
+        var costs = getDetoxCosts()
+        costs.append(cost)
+        if let data = try? JSONEncoder().encode(costs) {
+            standard.set(data, forKey: Keys.detoxCosts.rawValue)
+        }
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
@@ -152,5 +170,6 @@ extension DefaultsService {
         case prize
         case product
         case calendarEvent
+        case detoxCosts
     }
 }

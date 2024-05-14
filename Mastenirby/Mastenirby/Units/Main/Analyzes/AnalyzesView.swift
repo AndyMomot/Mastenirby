@@ -8,8 +8,37 @@
 import SwiftUI
 
 struct AnalyzesView: View {
+    @StateObject private var viewModel = AnalyzesViewModelModel()
+    
     var body: some View {
-        Text("AnalyzesView")
+        ZStack {
+            Colors.background.swiftUIColor
+                .ignoresSafeArea()
+            
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 10) {
+                    // Top image
+                    TopWallPaperView(title: "Analityka")
+                    
+                    ChartView(
+                        type: .day,
+                        title: "Spędź tydzień na detoksie",
+                        dataSource: viewModel.detoxCostsCurrentWeek
+                    )
+                    .padding()
+                    
+                    ChartView(
+                        type: .month,
+                        title: "Wydaj na detoks w ciągu miesiąca",
+                        dataSource: viewModel.detoxCostsMonths
+                    )
+                    .padding()
+                }
+            }
+        }
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 

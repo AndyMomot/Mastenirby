@@ -17,7 +17,7 @@ extension CustomCalendarView {
         let weekDays = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
         let calendar: Calendar = {
             var calendar = Calendar.current
-            calendar.locale = Locale(identifier: "ru_RU")
+            calendar.locale = Locale(identifier: "pl_PL")
             calendar.firstWeekday = 2 // Понедельник
             return calendar
         }()

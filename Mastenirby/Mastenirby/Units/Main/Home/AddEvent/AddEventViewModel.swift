@@ -71,6 +71,9 @@ private extension AddEventView.AddEventViewModel {
                 switch selectedSegmentIndex {
                 case 0:
                     items[index].amount += amount
+                    if items[index].isDetoxification {
+                        addDetoxCost(amount: Int(amount))
+                    }
                 case 1:
                     items[index].amount -= amount
                 default:
@@ -80,6 +83,11 @@ private extension AddEventView.AddEventViewModel {
         }
         DefaultsService.setEvent(items: items)
         completion()
+    }
+    
+    func addDetoxCost(amount: Int) {
+        let cost = DetoxCostModel(amount: amount)
+        DefaultsService.saveDetox(cost: cost)
     }
     
     func isValidFields() -> Bool {
@@ -93,5 +101,13 @@ private extension AddEventView.AddEventViewModel {
         }
         
         FileManagerService().saveFile(data: data, forPath: path)
+    }
+}
+
+extension AddEventView.AddEventViewModel {
+    struct DetoxCostModel: Identifiable, Codable {
+        private(set) var id = UUID().uuidString
+        private(set) var date = Date().today
+        var amount: Int
     }
 }
