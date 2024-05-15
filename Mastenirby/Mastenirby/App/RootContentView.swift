@@ -15,7 +15,12 @@ struct RootContentView: View {
             if viewModel.isLoading {
                 PreloaderView()
             } else {
-                TabBar()
+                if viewModel.isAgreed {
+                    TabBar()
+                } else {
+                    OnboardingViewTabView()
+                        .environmentObject(viewModel)
+                }
             }
         }
         .onAppear {

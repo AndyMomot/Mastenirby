@@ -87,6 +87,10 @@
 		47B885482BF112B900D3CE7D /* CreateReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B885472BF112B900D3CE7D /* CreateReminderViewModel.swift */; };
 		47C2A8332BF3C3020075E271 /* AnalyzesViewModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2A8322BF3C3020075E271 /* AnalyzesViewModelModel.swift */; };
 		47C2A8362BF3D1FA0075E271 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2A8352BF3D1FA0075E271 /* ChartView.swift */; };
+		47D8F0DA2BF4862D00596147 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8F0D92BF4862D00596147 /* Onboarding.swift */; };
+		47D8F0DD2BF48B9D00596147 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8F0DC2BF48B9D00596147 /* CheckBoxView.swift */; };
+		47D8F0E02BF48BD300596147 /* SwiftUIViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8F0DF2BF48BD300596147 /* SwiftUIViewWebView.swift */; };
+		47D8F0E22BF48CF800596147 /* OnboardingViewTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8F0E12BF48CF800596147 /* OnboardingViewTabView.swift */; };
 		47FD76592BEB6CEE00F0987F /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */; };
 		47FD765C2BEB6D3700F0987F /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765B2BEB6D3700F0987F /* ChallengeView.swift */; };
 		47FD765E2BEB6D3F00F0987F /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */; };
@@ -178,6 +182,10 @@
 		47B885472BF112B900D3CE7D /* CreateReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewModel.swift; sourceTree = "<group>"; };
 		47C2A8322BF3C3020075E271 /* AnalyzesViewModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzesViewModelModel.swift; sourceTree = "<group>"; };
 		47C2A8352BF3D1FA0075E271 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		47D8F0D92BF4862D00596147 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		47D8F0DC2BF48B9D00596147 /* CheckBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		47D8F0DF2BF48BD300596147 /* SwiftUIViewWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViewWebView.swift; sourceTree = "<group>"; };
+		47D8F0E12BF48CF800596147 /* OnboardingViewTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTabView.swift; sourceTree = "<group>"; };
 		47FD76582BEB6CEE00F0987F /* ChallengesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
 		47FD765B2BEB6D3700F0987F /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		47FD765D2BEB6D3F00F0987F /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +216,8 @@
 		47047C4A2BE506E200F083CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47D8F0DE2BF48BD300596147 /* WebView */,
+				47D8F0DB2BF48B9D00596147 /* CheckBox */,
 				47B885352BF0CCD900D3CE7D /* ChekBox */,
 				479D2E0F2BEA035500202541 /* Alerts */,
 				479D2E012BE8E7DC00202541 /* StepSlider */,
@@ -323,6 +333,7 @@
 		4754905E2BE3B1B200B325F2 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				47D8F0D82BF4856F00596147 /* Onboarding */,
 				475490622BE3B1F300B325F2 /* Preloader */,
 				4754909E2BE3C93000B325F2 /* Main */,
 			);
@@ -627,6 +638,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		47D8F0D82BF4856F00596147 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				47D8F0D92BF4862D00596147 /* Onboarding.swift */,
+				47D8F0E12BF48CF800596147 /* OnboardingViewTabView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		47D8F0DB2BF48B9D00596147 /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				47D8F0DC2BF48B9D00596147 /* CheckBoxView.swift */,
+			);
+			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		47D8F0DE2BF48BD300596147 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				47D8F0DF2BF48BD300596147 /* SwiftUIViewWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		47FD765A2BEB6D2D00F0987F /* AddChallenge */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,7 +809,9 @@
 				47B8852E2BF0A93B00D3CE7D /* EventShopViewModel.swift in Sources */,
 				4754908E2BE3BE8600B325F2 /* Fonts.generated.swift in Sources */,
 				475490A02BE3C95200B325F2 /* HomeView.swift in Sources */,
+				47D8F0E02BF48BD300596147 /* SwiftUIViewWebView.swift in Sources */,
 				475490002BE3ABE300B325F2 /* ViewController.swift in Sources */,
+				47D8F0E22BF48CF800596147 /* OnboardingViewTabView.swift in Sources */,
 				475490A82BE3C97000B325F2 /* AnalyzesView.swift in Sources */,
 				47548FFC2BE3ABE300B325F2 /* AppDelegate.swift in Sources */,
 				47B885402BF106C400D3CE7D /* DayOfMonthCell.swift in Sources */,
@@ -784,6 +822,7 @@
 				47047C562BE514F600F083CE /* MotivationDetailsView.swift in Sources */,
 				47047C4C2BE5071300F083CE /* TopWallPaperView.swift in Sources */,
 				475490A22BE3C95B00B325F2 /* AdviceView.swift in Sources */,
+				47D8F0DA2BF4862D00596147 /* Onboarding.swift in Sources */,
 				479D2E1A2BEA32EC00202541 /* AdviceCell.swift in Sources */,
 				47B885462BF111C500D3CE7D /* CreateReminderView.swift in Sources */,
 				475490112BE3ACB000B325F2 /* RootContentView.swift in Sources */,
@@ -797,6 +836,7 @@
 				475490A62BE3C96900B325F2 /* AssetsView.swift in Sources */,
 				475490442BE3AE6B00B325F2 /* Colors.generated.swift in Sources */,
 				4754903E2BE3AE6B00B325F2 /* Images.generated.swift in Sources */,
+				47D8F0DD2BF48B9D00596147 /* CheckBoxView.swift in Sources */,
 				478FEB382BECAA8F004AB6AA /* ChallengeDetailsView.swift in Sources */,
 				479D2DF72BE8DF8F00202541 /* AddEventViewModel.swift in Sources */,
 				47FD76592BEB6CEE00F0987F /* ChallengesViewModel.swift in Sources */,

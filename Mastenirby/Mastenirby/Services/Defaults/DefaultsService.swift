@@ -162,6 +162,16 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static var isAgreed: Bool {
+        standard.bool(forKey: Keys.privacyPolicy.rawValue)
+    }
+    
+    static func setAgreements(isAgreed: Bool) {
+        standard.setValue(isAgreed, forKey: Keys.privacyPolicy.rawValue)
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
@@ -171,5 +181,6 @@ extension DefaultsService {
         case product
         case calendarEvent
         case detoxCosts
+        case privacyPolicy
     }
 }

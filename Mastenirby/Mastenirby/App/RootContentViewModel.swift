@@ -10,6 +10,7 @@ import Foundation
 extension RootContentView {
     final class RootContentViewModel: ObservableObject {
         @Published var isLoading = true
+        @Published var isAgreed = DefaultsService.isAgreed
         
         func viewDidAppear() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
