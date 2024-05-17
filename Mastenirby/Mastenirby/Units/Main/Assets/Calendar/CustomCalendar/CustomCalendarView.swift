@@ -127,9 +127,9 @@ struct CustomCalendarView: View {
         .onAppear {
             viewModel.getCalendarEvents()
         }
-        .onChange(of: viewModel.showCreateEvent, { oldValue, newValue in
+        .onChange(of: viewModel.showCreateEvent) { _ in
             viewModel.getCalendarEvents()
-        })
+        }
         .navigationBarBackButtonHidden()
     }
 }

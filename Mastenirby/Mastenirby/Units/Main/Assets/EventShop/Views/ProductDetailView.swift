@@ -82,24 +82,42 @@ struct ProductDetailView: View {
         .onAppear {
             prizeNumber = DefaultsService.prizeNumber
         }
-        .onChange(of: dollarsSelected) { oldValue, newValue in
+        .onChange(of: dollarsSelected) { newValue in
             if item.starsPrice != nil {
                 dollarsSelected = newValue
-                starsSelected = oldValue
+                starsSelected = false
             } else {
                 dollarsSelected = true
                 starsSelected = false
             }
         }
-        .onChange(of: starsSelected) { oldValue, newValue in
+//        .onChange(of: dollarsSelected) { oldValue, newValue in
+//            if item.starsPrice != nil {
+//                dollarsSelected = newValue
+//                starsSelected = oldValue
+//            } else {
+//                dollarsSelected = true
+//                starsSelected = false
+//            }
+//        }
+        .onChange(of: starsSelected) { newValue in
             if item.starsPrice != nil {
-                dollarsSelected = oldValue
+                dollarsSelected = false
                 starsSelected = newValue
             } else {
                 dollarsSelected = true
                 starsSelected = false
             }
         }
+//        .onChange(of: starsSelected) { oldValue, newValue in
+//            if item.starsPrice != nil {
+//                dollarsSelected = oldValue
+//                starsSelected = newValue
+//            } else {
+//                dollarsSelected = true
+//                starsSelected = false
+//            }
+//        }
     }
 }
 
