@@ -58,7 +58,6 @@ struct CreateReminderView: View {
                             .frame(height: 50)
                             .overlay(
                                 DatePicker(selection: $viewModel.startTime,
-                                           in: Date()...,
                                            displayedComponents: .hourAndMinute) {
                                                Text("Czas rozpoczęcia")
                                                    .foregroundColor(.black)
@@ -76,8 +75,7 @@ struct CreateReminderView: View {
                             .foregroundColor(Color.clear)
                             .frame(height: 50)
                             .overlay(
-                                DatePicker(selection: $viewModel.startTime,
-                                           in: Date()...,
+                                DatePicker(selection: $viewModel.finishTime,
                                            displayedComponents: .hourAndMinute) {
                                                Text("Czas rozpoczęcia")
                                                    .foregroundColor(.black)

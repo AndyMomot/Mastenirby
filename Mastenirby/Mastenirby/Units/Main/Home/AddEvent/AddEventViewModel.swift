@@ -71,7 +71,7 @@ private extension AddEventView.AddEventViewModel {
                 switch selectedSegmentIndex {
                 case 0:
                     items[index].amount += amount
-                    if items[index].isDetoxification {
+                    if isDetoxification {
                         addDetoxCost(amount: Int(amount))
                     }
                 case 1:
