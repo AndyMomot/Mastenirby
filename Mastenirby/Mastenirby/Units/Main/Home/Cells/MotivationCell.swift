@@ -16,13 +16,27 @@ struct MotivationCell: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text(item.text)
-                .foregroundStyle(Color.black)
-                .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 11))
-                .lineLimit(5)
-                .multilineTextAlignment(.leading)
-                .padding(.horizontal)
-                .padding(.bottom)
+            HStack {
+                Text(item.title)
+                    .foregroundStyle(Color.black)
+                    .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 13))
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
+            
+            HStack {
+                Text(item.text)
+                    .foregroundStyle(Color.black)
+                    .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 11))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
         .background(Color.white)
         .cornerRadius(40)
