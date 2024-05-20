@@ -116,7 +116,7 @@ extension Onboarding {
             title: "Witaj serdecznie w naszej aplikacji detoksu cyfrowego!",
             subtitle: "Tutaj znajdziesz wiele inspirujących aktywności i wskazówek, które pomogą Ci odkryć radość życia poza cyfrowym światem. Zapraszamy do eksploracji nowych doświadczeń i głębszego zanurzenia się w autentycznych chwilach.",
             nextButtonTitle: "Kontynuacja",
-            urlString: "https://google.com"
+            urlString: "https://mastenirby.info"
         ), currentPage: .constant(0)
     )
 }

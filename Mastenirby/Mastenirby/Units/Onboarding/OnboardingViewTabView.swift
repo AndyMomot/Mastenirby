@@ -47,7 +47,7 @@ struct OnboardingViewTabView: View {
                     title: "Witamy w Mastenirby",
                     subtitle: "Nasza polityka prywatności zapewnia ochronę danych osobowych użytkowników.",
                     nextButtonTitle: "Akceptuj",
-                    urlString: "https://google.com"
+                    urlString: "https://mastenirby.info"
                 ), currentPage: $currentPageIndex
             )
             .tag(2)
